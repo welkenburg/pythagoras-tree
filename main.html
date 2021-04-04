@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>FRACTALS !!!!</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.10.2/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.10.2/addons/p5.sound.min.js"></script>
+    <script src="script.js"></script>
+</head>
+<body style="margin: 0px;padding: 0px;">
+	<div id="tree">
+		<div id="head" style="position: absolute; z-index: 1;padding-left: 2vw">
+			<h1 id="titlet">Pithagoras Tree Type 1</h1>
+		</div>
+		<div  id="menu" style="position: absolute; z-index: 1;right:0px;display: flex;margin-top: 8vh;">
+			<div id="ratiodiv">
+				<input type="range" min="0" max="100" value="50" id="ratio" style="transform: rotate(270deg);" oninput="update_ratio(this.value)" onchange="update_ratio(this.value)">
+				<div style="padding-top: 4vh">
+					<h2>ratio :</h2>
+					<h2 id="rval"></h2>
+				</div>
+			</div>
+			<div id="iterationsdiv">
+				<input type="range" min="1" max="30" value="8" id="i" style="transform: rotate(270deg);" oninput="update_max_iterations(this.value)" onchange="update_max_iterations(this.value)">
+				<div style="padding-top: 4vh">
+					<h2>iterations :</h2>
+					<h2 id="ival"></h2>
+				</div>
+			</div>
+		</div>
+		<div id="clear" style="position: absolute; z-index: 1;right:2vw;bottom: 2vh;">
+			<input type="button" value="reset !" onclick="reset()">
+		</div>
+		<div id="clear" style="position: absolute; z-index: 1;left:2vw;bottom: 2vh;">
+			<span>Saturation : </span><input type="range" min="0" max="100" value="100" id="sat" oninput="update_sat(this.value)" onchange="update_sat(this.value)"><span id="sval"></span>
+			<span>Brightness : </span><input type="range" min="0" max="100" value="80" id="bright" oninput="update_bright(this.value)" onchange="update_bright(this.value)"><span id="bval"></span>
+		</div>
+		<div id="canvas" style="position:absolute; z-index:0;">
+			<script src="script.js"></script>
+		</div>
+	</div>
+</body>
+</html>
